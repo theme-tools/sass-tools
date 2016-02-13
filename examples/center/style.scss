@@ -1,0 +1,18 @@
+@import "../../lib/center";
+.box {
+  border: solid 1px black;
+  margin: 10px;
+  height: 150px;
+}
+.center-me {
+  border: dotted 1px hsl(0, 0%, 0.5);
+  &--both {
+    @include center();
+  }
+  &--vertically {
+    @include center($horizontally: false);
+  }
+  &--horizontally {
+    @include center($vertically: false);
+  }
+}

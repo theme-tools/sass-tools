@@ -8,7 +8,7 @@
     "clean": "rm examples/**/*.css & rm -rf docs",
     "release": "git push && git push --tags && npm publish",
     "sassdoc": "sassdoc lib --dest docs",
-    "serve": "browser-sync start --browser 'Google Chrome Canary' --files examples/**/*.html --files dest/*.css --server --startPath examples/ --directory ",
+    "serve": "browser-sync start --browser 'Google Chrome Canary' --files examples/**/*.html --files examples/**/*.css --server --startPath examples/ --directory ",
     "start": "npm run clean && (npm run watch & npm run serve)",
     "test": "npm run build",
     "watch": "nodemon --watch examples/ --watch lib/ --ext scss --exec 'npm run build' "
