@@ -1,0 +1,26 @@
+{
+  "name": "evans-sass-tools",
+  "description": "My personal Sass/Scss mixins and more",
+  "main": "all.scss",
+  "authors": [
+    "Evan Lovely"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "sass",
+    "scss",
+    "css",
+    "scss-mixins",
+    "front-end"
+  ],
+  "homepage": "https://github.com/EvanLovely/evans-sass-tools",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "examples"
+  ]
+}

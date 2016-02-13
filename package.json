@@ -1,0 +1,39 @@
+{
+  "name": "evans-sass-tools",
+  "version": "1.0.0",
+  "description": "My personal Sass/Scss mixins and more",
+  "main": "all.scss",
+  "scripts": {
+    "build": "node-sass --recursive examples/ --output examples/ & npm run sassdoc",
+    "clean": "rm examples/**/*.css & rm -rf docs",
+    "release": "git push && git push --tags && npm publish",
+    "sassdoc": "sassdoc lib --dest docs",
+    "serve": "browser-sync start --browser 'Google Chrome Canary' --files examples/**/*.html --files dest/*.css --server --startPath examples/ --directory ",
+    "start": "npm run clean && (npm run watch & npm run serve)",
+    "test": "npm run build",
+    "watch": "nodemon --watch examples/ --watch lib/ --ext scss --exec 'npm run build' "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanLovely/evans-sass-tools.git"
+  },
+  "keywords": [
+    "sass",
+    "scss",
+    "css",
+    "scss-mixins",
+    "front-end"
+  ],
+  "author": "Evan Lovely",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvanLovely/evans-sass-tools/issues"
+  },
+  "homepage": "https://github.com/EvanLovely/evans-sass-tools#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.8.1",
+    "sassdoc": "^2.1.20"
+  }
+}

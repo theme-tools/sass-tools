@@ -1,0 +1,6 @@
+@import "../../lib/arrow";
+.arrow-box {
+  &:after {
+    @include arrow();  
+  }
+}

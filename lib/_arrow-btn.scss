@@ -1,0 +1,69 @@
+@import "arrow";
+/// Arrow Button
+/// @param $direction - 'left' or 'right'
+/// @param $height - Height of the Button
+/// @param $border-color
+/// @param $bg - Background color of button
+/// @param $arrow-length - how far out the button the arrow sticks
+/// @param $border-width
+/// @param $base - set to false to easily override just $bg and $border-color for hover or active states
+@mixin arrow-btn($direction: right, $height: 34px, $border-color: hsl(0, 0%, 85%), $bg: white, $arrow-length: 16px, $border-width: 1px, $base: true) {
+  @if $base {
+    display: inline-block;
+    border: solid $border-width $border-color;
+    height: $height;
+    line-height: $height;
+    position: relative;
+    @if $direction == 'left' {
+      border-radius: 3px 0 0 3px;
+      border-left-width: 0;
+      margin-left: $arrow-length;
+    }
+    @if $direction == 'right' {
+      border-radius: 0 3px 3px 0;
+      border-right-width: 0;
+      margin-right: $arrow-length;
+    }
+    &:before {
+      @include arrow($color: $border-color, $direction: $direction, $arrow-length: ($arrow-length + ($border-width * 2)), $arrow-breadth: $height);
+      position: absolute;
+      top: -1px;
+      transform: translateZ(0);
+      @if $direction == 'left' {
+        left: (-1 * ($arrow-length));
+      }
+      @if $direction == 'right' {
+        right: (-1 * ($arrow-length));
+      }
+    }
+    &:after {
+      @include arrow($color: $bg, $direction: $direction, $arrow-length: $arrow-length, $arrow-breadth: ($height - ($border-width * 2)));
+      position: absolute;
+      top: 0;
+      transform: translateZ(0);
+      @if $direction == 'left' {
+        left: (-1 * ($arrow-length - (2 * $border-width)));
+      }
+      @if $direction == 'right' {
+        right: (-1 * ($arrow-length - (2 * $border-width)));
+      }
+    }
+  } @else {
+    &:before {
+      @if $direction == 'left' {
+        border-right-color: $border-color;
+      }
+      @if $direction == 'right' {
+        border-left-color: $border-color;
+      }
+    }
+    &:after {
+      @if $direction == 'left' {
+        border-right-color: $bg;
+      }
+      @if $direction == 'right' {
+        border-left-color: $bg;
+      }
+    }
+  }
+}
