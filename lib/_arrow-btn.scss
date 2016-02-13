@@ -1,4 +1,4 @@
-@import "arrow";
+@import "triangle";
 /// Arrow Button
 /// @param $direction - 'left' or 'right'
 /// @param $height - Height of the Button
@@ -25,7 +25,7 @@
       margin-right: $arrow-length;
     }
     &:before {
-      @include arrow($color: $border-color, $direction: $direction, $arrow-length: ($arrow-length + ($border-width * 2)), $arrow-breadth: $height);
+      @include triangle($color: $border-color, $direction: $direction, $length: ($arrow-length + ($border-width * 2)), $width: $height);
       position: absolute;
       top: -1px;
       transform: translateZ(0);
@@ -37,7 +37,7 @@
       }
     }
     &:after {
-      @include arrow($color: $bg, $direction: $direction, $arrow-length: $arrow-length, $arrow-breadth: ($height - ($border-width * 2)));
+      @include triangle($color: $bg, $direction: $direction, $length: $arrow-length, $width: ($height - ($border-width * 2)));
       position: absolute;
       top: 0;
       transform: translateZ(0);

@@ -1,0 +1,38 @@
+/// Triangle
+/// @param $color [black]
+/// @param $direction [right]
+/// @param $length [0.66em]
+/// @param $width [$length * 1.515151515]
+/// @param $base pass `false` to exclude base styles, useful for hover states to change only color
+@mixin triangle($color: black, $direction: right, $length: 0.66em, $width: $length * 1.515151515, $base: true) {
+  $half-width: $width / 2;
+  @if $base {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    color: transparent;
+    content: '';
+  }
+  @if $direction == right {
+    border: {
+      width: $half-width 0 $half-width $length;
+      color: transparent transparent transparent $color;
+    }
+  } @else if $direction == left {
+    border: {
+      width: $half-width $length $half-width 0;
+      color: transparent $color transparent transparent;
+    }
+  } @else if $direction == up {
+    border: {
+      width: 0 $half-width $length $half-width;
+      color: transparent transparent $color transparent;
+    }
+  } @else if $direction == down {
+    border: {
+      width: $length $half-width 0 $half-width;
+      color: $color transparent transparent transparent;
+    }
+  }
+}
