@@ -1,5 +1,7 @@
 # Evan's Sass Tools
 
+[![Build Status](https://travis-ci.org/EvanLovely/evans-sass-tools.svg?branch=master)](https://travis-ci.org/EvanLovely/evans-sass-tools)
+
 A personal collection of mixins and other handy tools.
 
 ## Tools
