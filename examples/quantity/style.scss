@@ -1,0 +1,29 @@
+@import "../../lib/quantity";
+
+.list {
+  li {
+    color: blue;
+  }
+  .exactly-5 & {
+    @include quantity(exactly, 5, li) {
+      color: red;
+    }
+  }
+  .more-than-5 & {
+    @include quantity(more-than, 5, li) {
+      color: red;
+    }
+  }
+  .less-than-5 & {
+    @include quantity(less-than, 5, li) {
+      color: red;
+    }
+  }
+}
+
+// presentation
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

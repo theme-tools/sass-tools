@@ -2,6 +2,20 @@
 
 A personal collection of mixins and other handy tools.
 
+## Tools
+
+- Centering (Vertically and/or Horizontally)
+- Quantity Queries
+- Triangles
+- Arrow Buttons
+
+Examples and SassDocs are available by cloning this repo and running:
+
+	npm install
+	npm start
+
+You **do not** need to clone the repo to use the tools, just to see examples and docs.
+
 ## Installation & Setup
 
 Works via `npm` or `bower`. First, **pick one** install method:
@@ -52,3 +66,4 @@ Please ensure:
 - Items have [SassDocs Annotations](http://sassdoc.com/annotations) (the triple slash `///` comments)
 - Examples have been provided
 - `npm test` executes successfully
+

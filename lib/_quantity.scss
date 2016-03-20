@@ -1,0 +1,48 @@
+/// Quantity Queries
+/// Query for a number of **elements** (not selectors).
+/// @param {string} $query [exactly] Options: exactly, more-than, less-than 
+/// @param {number} $i [1] How many elements
+/// @param {string} $element [*] What HTML element
+/// @link http://localhost:3000/examples/quantity/index.html
+/// @link http://alistapart.com/article/quantity-queries-for-css
+/// @example scss
+///    .exactly-5 {
+///      @include quantity(exactly, 5, li) {
+///        color: red;
+///      }
+///    }
+///    .more-than-5 {
+///      @include quantity(more-than, 5, li) {
+///        color: red;
+///      }
+///    }
+///    .less-than-5 {
+///      @include quantity(less-than, 5, li) {
+///        color: red;
+///    }
+@mixin quantity($query: exactly, $i: 1, $element: '*') {
+
+  @if $query == 'exactly' {
+    #{$element}:nth-last-of-type(#{$i}):first-child,
+    #{$element}:nth-last-of-type(#{$i}):first-child ~ #{$element} {
+      @content;
+    }
+  }
+  
+  @if $query == 'more-than' {
+    $value: $i + 1;
+    #{$element}:nth-last-of-type(n+#{$value}),
+    #{$element}:nth-last-of-type(n+#{$value}) ~ #{$element} {
+      @content;
+    }
+  }
+ 
+  @if $query == 'less-than' {
+    $value: $i - 1;
+    #{$element}:nth-last-of-type(-n+#{$value}):first-child,
+    #{$element}:nth-last-of-type(-n+#{$value}):first-child ~ #{$element} {
+      @content;
+    }
+  }
+  
+}
