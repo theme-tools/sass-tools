@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node-sass --recursive examples/ --output examples/ & npm run sassdoc",
     "clean": "rm examples/**/*.css & rm -rf docs",
-    "release": "npm test && git push && git push --tags",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
     "sassdoc": "sassdoc lib --dest docs",
     "serve": "browser-sync start --browser 'Google Chrome Canary' --files examples/**/*.html --files examples/**/*.css --server --startPath examples/ --directory ",
     "start": "npm run clean && (npm run watch & npm run serve)",
