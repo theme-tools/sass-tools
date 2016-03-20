@@ -11,13 +11,6 @@ A personal collection of mixins and other handy tools.
 - Triangles
 - Arrow Buttons
 
-Examples and SassDocs are available by cloning this repo and running:
-
-	npm install
-	npm start
-
-You **do not** need to clone the repo to use the tools, just to see examples and docs.
-
 ## Installation & Setup
 
 Works via `npm` or `bower`. First, **pick one** install method:
@@ -42,6 +35,14 @@ If a mixin has dependencies on other mixins, it'll import them; so just grab wha
 ## Examples
 
 See the `examples/` directory for the Sass and HTML used to demo the different tools. You'll need to build the tools to see them in a browser though (see below; it's easy).
+
+In browser examples and SassDocs are available by cloning this repo and running:
+
+	npm install
+	npm start
+
+You **do not** need to clone the repo to use the tools, just to see examples and docs.
+
 
 ## More Info
 
