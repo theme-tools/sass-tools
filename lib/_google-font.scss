@@ -1,0 +1,10 @@
+@import "to-string";
+/// Import Google Font
+/// @param {list} $variants - Font Weight and Style variants (i.e. `("300", "400", "400i")`) - `i` = italic
+/// @param {string} $family - Font Family with spaces as `+` (i.e. `Source+Sans+Pro`)
+/// @output `@import()` statement
+/// @example scss
+///   @include google-font-import($variants: ("300", "400", "400i", "700"), $family: "Source+Sans+Pro");
+@mixin google-font-import($variants, $family) {
+  @import url('//fonts.googleapis.com/css?family=#{$family}:#{to-string($variants, ",")}');
+}
