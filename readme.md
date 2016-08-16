@@ -10,6 +10,7 @@ A personal collection of mixins and other handy tools.
 - Quantity Queries
 - Triangles
 - Arrow Buttons
+- Google Fonts Import
 
 ## Installation & Setup
 
