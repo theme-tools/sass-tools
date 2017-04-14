@@ -11,7 +11,7 @@
     "sassdoc": "sassdoc lib --dest docs/sassdoc",
     "serve": "browser-sync start --browser 'Google Chrome Canary' --files docs/examples/**/*.html --files docs/examples/**/*.css --server --startPath docs/ --directory ",
     "start": "npm run clean && (npm run watch & npm run serve)",
-    "deploy": "npm run clean && npm run build && cd docs && git init && git commit --allow-empty -m 'update docs' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update docs' && git push git@github.com:EvanLovely/evans-sass-tools.git gh-pages --force",
+    "deploy": "npm run clean && npm run build && cd docs && git init && git commit --allow-empty -m 'update docs' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update docs' && git push git@github.com:EvanLovely/evans-sass-tools.git gh-pages --force && rm -rf .git",
     "test": "npm run build",
     "watch": "nodemon --watch docs/examples/ --watch lib/ --ext scss --exec 'npm run build' "
   },
