@@ -1,0 +1,6 @@
+@import "../../../lib/triangle";
+.triangle-box {
+  &:after {
+    @include triangle();
+  }
+}
