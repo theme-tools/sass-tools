@@ -1,0 +1,19 @@
+.list li {
+  color: blue; }
+
+.exactly-5 .list li:nth-last-of-type(5):first-child,
+.exactly-5 .list li:nth-last-of-type(5):first-child ~ li {
+  color: red; }
+
+.more-than-5 .list li:nth-last-of-type(n+6),
+.more-than-5 .list li:nth-last-of-type(n+6) ~ li {
+  color: red; }
+
+.less-than-5 .list li:nth-last-of-type(-n+4):first-child,
+.less-than-5 .list li:nth-last-of-type(-n+4):first-child ~ li {
+  color: red; }
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }

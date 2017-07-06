@@ -1,0 +1,9 @@
+.triangle-box:after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  color: transparent;
+  content: '';
+  border-width: 0.5em 0 0.5em 0.66em;
+  border-color: transparent transparent transparent black; }

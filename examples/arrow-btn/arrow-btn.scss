@@ -1,0 +1,7 @@
+@import "../../../lib/arrow-btn";
+.arrow-btn {
+  @include arrow-btn();
+}
+.arrow-btn--left {
+  @include arrow-btn($direction: left);
+}

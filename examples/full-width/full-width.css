@@ -1,0 +1,27 @@
+img {
+  max-width: 100%;
+  height: auto; }
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  border: dotted 1px red;
+  padding: 10px; }
+
+.full-width {
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw; }
+
+.full-width--undo {
+  margin-left: 0;
+  margin-right: 0;
+  position: static;
+  left: auto;
+  right: auto;
+  width: auto;
+  max-width: 100%; }
