@@ -1,7 +1,7 @@
 {
-  "name": "evans-sass-tools",
+  "name": "sass-tools",
   "version": "1.4.0",
-  "description": "My personal Sass/Scss mixins and more",
+  "description": "Helpful Sass/Scss mixins and more",
   "main": "all.scss",
   "scripts": {
     "build": "node-sass --recursive docs/examples/ --output docs/examples/ && npm run sassdoc",
@@ -11,13 +11,13 @@
     "sassdoc": "sassdoc lib --dest docs/sassdoc",
     "serve": "browser-sync start --browser 'Google Chrome Canary' --files docs/examples/**/*.html --files docs/examples/**/*.css --server --startPath docs/ --directory ",
     "start": "npm run clean && (npm run watch & npm run serve)",
-    "deploy": "npm run clean && npm run build && cd docs && git init && git commit --allow-empty -m 'update docs' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update docs' && git push git@github.com:EvanLovely/evans-sass-tools.git gh-pages --force && rm -rf .git",
+    "deploy": "npm run clean && npm run build && cd docs && git init && git commit --allow-empty -m 'update docs' && git checkout -b gh-pages && touch .nojekyll && git add . && git commit -am 'update docs' && git push git@github.com:theme-tools/sass-tools.git gh-pages --force && rm -rf .git",
     "test": "npm run build",
     "watch": "nodemon --watch docs/examples/ --watch lib/ --ext scss --exec 'npm run build' "
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EvanLovely/evans-sass-tools.git"
+    "url": "git+https://github.com/theme-tools/sass-tools.git"
   },
   "keywords": [
     "sass",
@@ -29,9 +29,9 @@
   "author": "Evan Lovely",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EvanLovely/evans-sass-tools/issues"
+    "url": "https://github.com/theme-tools/sass-tools/issues"
   },
-  "homepage": "https://github.com/EvanLovely/evans-sass-tools#readme",
+  "homepage": "https://github.com/theme-tools/sass-tools#readme",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "node-sass": "^3.4.2",

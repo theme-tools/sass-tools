@@ -1,8 +1,8 @@
-# Evan's Sass Tools
+# Sass Tools
 
-[![Build Status](https://travis-ci.org/EvanLovely/evans-sass-tools.svg?branch=master)](https://travis-ci.org/EvanLovely/evans-sass-tools)
+[![Build Status](https://travis-ci.org/theme-tools/sass-tools.svg?branch=master)](https://travis-ci.org/theme-tools/sass-tools)
 
-A personal collection of mixins and other handy tools.
+A collection of mixins and other handy tools.
 
 ## Tools
 
@@ -16,12 +16,12 @@ A personal collection of mixins and other handy tools.
 
 Works via `npm` or `bower`. First, **pick one** install method:
 
-	npm install evans-sass-tools
-	bower install evans-sass-tools
+	npm install sass-tools
+	bower install sass-tools
 
 Then, include the main file in your sass; so if you had `scss/style.css`, you'd include this in it:
 
-	@import "../node_modules/evans-sass-tools/all.scss";
+	@import "../node_modules/sass-tools/all.scss";
 
 If you're using bower, just replace `node_modules/` for `bower_components/`.
 
@@ -29,7 +29,7 @@ If you're using bower, just replace `node_modules/` for `bower_components/`.
 
 Feel free to not grab the whole thing and just pick a single mixin:
 
-	@import "../node_modules/evans-sass-tools/lib/_arrow-btn.scss";
+	@import "../node_modules/sass-tools/lib/_arrow-btn.scss";
 
 If a mixin has dependencies on other mixins, it'll import them; so just grab what you need.
 
@@ -43,7 +43,6 @@ In browser examples and SassDocs are available by cloning this repo and running:
 	npm start
 
 You **do not** need to clone the repo to use the tools, just to see examples and docs.
-
 
 ## More Info
 

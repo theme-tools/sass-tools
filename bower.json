@@ -1,6 +1,6 @@
 {
-  "name": "evans-sass-tools",
-  "description": "My personal Sass/Scss mixins and more",
+  "name": "sass-tools",
+  "description": "Helpful Sass/Scss mixins and more",
   "main": "all.scss",
   "authors": [
     "Evan Lovely"
@@ -13,7 +13,7 @@
     "scss-mixins",
     "front-end"
   ],
-  "homepage": "https://github.com/EvanLovely/evans-sass-tools",
+  "homepage": "https://github.com/theme-tools/sass-tools",
   "moduleType": [],
   "ignore": [
     "**/.*",
