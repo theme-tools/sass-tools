@@ -1,0 +1,17 @@
+$smart-grid-breakpoints: (
+    'small': 400px,
+    'medium': 500px,
+    'large': 800px,
+    'xlarge': 1200px,
+) !default;
+
+@import "../../../lib/smart-grid";
+* {
+  box-sizing: border-box;
+}
+
+.smart-grid {
+  > * {
+    border: solid 1px #ccc;
+  }
+}

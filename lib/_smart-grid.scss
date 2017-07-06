@@ -1,0 +1,75 @@
+////
+/// @group layout
+////
+
+/// % should not be used here as Firefox doesn't like it
+$smart-grid-gutter: 16px !default;
+///
+$smart-grid-columns: 12 !default;
+///
+$smart-grid-sizes: 1, 2, 3, 4, 6 !default;
+///
+$smart-grid-breakpoints: (
+  'small': 400px,
+  'medium': 600px,
+  'large': 900px,
+) !default;
+///
+$smart-grid-generate-css: true !default;
+///
+$smart-grid-selector: '.smart-grid' !default;
+
+/// Get width of grid item
+/// `calc()` is returned b/c you can use `px` gutters and `%` width.
+/// @param $columns - How many columns from `$smart-grid-columns` (i.e. 12) to get width for. Passing in 4 when 12 column would get you roughly 25% after accounting for gutters.
+/// @returns {number} - a `calc()` value to use in `width`
+/// @example scss
+///   .class {
+///     width: grid-width(4); // becomes `width: calc((50% + 1%) - 2%);`
+///   }
+@function grid-width($columns) {
+  $items: $smart-grid-columns / $columns;
+  $column: 100% / $items;
+  $extra-space: $smart-grid-gutter / $items;
+  @return calc((#{$column} + #{$extra-space}) - #{$smart-grid-gutter});
+}
+
+/// Smart Grid
+/// Include in a parent element to layout all children
+/// @param $row-items [4] - How many items per row
+/// @param $gutter [1rem] - Space between Items
+@mixin smart-grid($row-items: 4, $gutter: $smart-grid-gutter) {
+  display: flex;
+  flex-wrap: wrap;
+  > * {
+    margin-bottom: $gutter;
+    @if $row-items > 1 {
+      width: grid-width($smart-grid-columns / $row-items);
+    } @else {
+      width: 100%;
+    }
+    &:nth-child(1n) {
+      margin-right: $gutter;
+    }
+    &:nth-child(#{$row-items}n) {
+      margin-right: 0;
+    }
+  }
+}
+
+@if($smart-grid-generate-css) {
+  #{$smart-grid-selector} {
+    > * {
+      margin-bottom: $smart-grid-gutter;
+    }
+    @each $name, $bp in $smart-grid-breakpoints {
+      @each $size in $smart-grid-sizes {
+        @media screen and (min-width: #{$bp}) {
+          &[data-row-items-#{$name}="#{$size}"] {
+            @include smart-grid($row-items: $size);
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ A collection of mixins and other handy tools.
 
 ## Tools
 
+- Smart Grid
 - Centering (Vertically and/or Horizontally)
 - Quantity Queries
 - Triangles
