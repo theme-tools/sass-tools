@@ -59,6 +59,7 @@ $smart-grid-selector: '.smart-grid' !default;
 
 @if($smart-grid-generate-css) {
   #{$smart-grid-selector} {
+    width: 100%;
     > * {
       margin-bottom: $smart-grid-gutter;
     }
