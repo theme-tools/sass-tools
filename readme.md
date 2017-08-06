@@ -49,7 +49,7 @@ You **do not** need to clone the repo to use the tools, just to see examples and
 
 ### Docs
 
-After building the tools, you can see the [SassDocs](http://sassdoc.com) at `docs/`.
+After building the tools, you can see the [SassDocs](http://sassdoc.com) at `docs/sassdoc/index.html`.
 
 ### Building the Tools
 
