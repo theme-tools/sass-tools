@@ -41,7 +41,14 @@ $smart-grid-selector: '.smart-grid' !default;
 @mixin smart-grid($row-items: 4, $gutter: $smart-grid-gutter) {
   display: flex;
   flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
   > * {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
     margin-bottom: $gutter;
     @if $row-items > 1 {
       width: grid-width($smart-grid-columns / $row-items);
